@@ -1,0 +1,9 @@
+ {
+  "name": "KVideo",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build:aliyun",
+  "assets": {
+    "directory": "./out",
+    "notFoundStrategy": "404Page"
+  }
+}

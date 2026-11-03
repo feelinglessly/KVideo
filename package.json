@@ -8,7 +8,8 @@
     "start": "node scripts/next-with-lan-access.mjs start",
     "lint": "eslint",
     "test": "tsx --test tests/**/*.test.ts",
-    "pages:build": "next-on-pages && node scripts/transpile-client-assets.mjs .vercel/output/static/_next/static"
+    "pages:build": "next-on-pages && node scripts/transpile-client-assets.mjs .vercel/output/static/_next/static",
+    "build:aliyun": "next build"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
