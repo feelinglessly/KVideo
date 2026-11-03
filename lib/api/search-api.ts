@@ -38,7 +38,13 @@ async function searchVideosBySource(
             return res;
         });
 
-        const data: ApiSearchResponse = await response.json();
+        const text = await response.text();
+        const safeText = text.replace(
+            /("(?:vod_id|vod_douban_id)"\s*:\s*)(\d{16,})/g,
+            '$1"$2"'
+        );
+        const data: ApiSearchResponse = JSON.parse(safeText);
+        // const data: ApiSearchResponse = await response.json();
 
         if (data.code !== 1 && data.code !== 0) {
             throw new Error(data.msg || 'Invalid API response');
